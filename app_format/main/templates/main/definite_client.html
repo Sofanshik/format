@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+     {{ title }}
+{% endblock %}
+
+{% block body %}
+     <div class="alert alert-info" style="text-color: black;">
+          <h2>Информация о клиенте:</h2><br>
+          <h3>{{ client.name }}</h3>
+          <h4>{{ client.date_birth }}</h4>
+          {% if client.active%}
+               <h4>Активный клиент, посещает занятия!</h4>
+          {% else %}
+               <h4>Не посещал занятия уже давно или даже не начинал!</h4>
+          {% endif %}
+
+     </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+     {{ title }}
+{% endblock %}
+
+{% block body %}
+
+    {%  for client in clients %}
+        <div class="alert alert-warning mt-2">
+            <a href="{% url 'definite_client_url' client.id %}" style="color: grey; text-decoration: none;"><h2>{{ client.name }}</h2></a>
+        </div>
+    {% endfor %}
+
+{% endblock %}

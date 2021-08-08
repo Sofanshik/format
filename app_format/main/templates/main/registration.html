@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+     {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h1>Создать клиента:</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.date_birth }} <br>
+        {{ form.active }} Вы активный пользователь?<br>
+            <button type="submit" class="btn btn-success">Create</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
