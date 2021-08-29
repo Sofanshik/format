@@ -8,11 +8,10 @@
     <h1>Создать клиента:</h1>
     <form method="post">
         {% csrf_token %}
-        {{form.as_p}}
-<!--        {{ form.name }}<br>
+        {{ form.name }}<br>
         {{ form.surname }}<br>
         {{ form.email }}<br>
-        {{ form.date_birth }} <br>-->
+        {{ form.date_birth }} <br>
             <button type="submit" class="btn btn-success">Create</button>
         <span>{{ error }}</span>
     </form>

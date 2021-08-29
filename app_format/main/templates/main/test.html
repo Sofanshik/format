@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+
+<a href="?order_by=surname&dir={{ url_dir }}" class="badge" style="text-decoration: none;">Фамилия</a>
+
+<ul>
+{% for client in clients %}
+    <li>{{ client.name }}</li>
+{% endfor %}
+    </ul>
+</body>
+</html>

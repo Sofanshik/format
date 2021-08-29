@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Trainer(models.Model):
@@ -10,11 +11,16 @@ class Trainer(models.Model):
 
 class Client(models.Model):
     name = models.CharField(max_length=30)
+    surname = models.CharField(max_length=30, default="")
+    email = models.EmailField(max_length=254, default="")
     date_birth = models.DateField()
-    active = models.BooleanField()
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('definite_client_url', kwargs={'client_id': self.pk})
 
 
 class Subscription(models.Model):
